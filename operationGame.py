@@ -35,11 +35,11 @@ def add():
         if int(rep) == c:
             print("OK? Tu as juste !")
             score = score + 1
-            print(f"ton score est{score}")
+            print(f"ton score est de {score}")
         else:
             print("PAS OK, c'est faux")
             score = score + 1
-            print(f"ton score est{score}")
+            print(f"ton score est de {score}")
 
     print("Bravo !! Tu as atteint 10 points !")
 
@@ -58,11 +58,11 @@ def sous():
         if int(rep) == c:
             print("OK, tu as juste !")
             score = score + 1
-            print(f"ton score est{score}")
+            print(f"ton score est de {score}")
         else:
             print("PAS OK")
             score = score + 1
-            print(f"ton score est{score}")
+            print(f"ton score est de {score}")
 
     print("Bravo !! Tu as atteint 10 points")
 
@@ -77,5 +77,7 @@ if level == "M":
     mul()
 elif level == "A":
     add()
-else:
+elif level == "S":
     sous()
+else:
+    print("ERROR")
