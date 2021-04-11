@@ -1,8 +1,19 @@
+"""
+A little game to train yourself to mental calcul
+Multiplications
+Subtractions
+Additions
+
+By Ulysse Valdenaire
+"""
+
+
 import random
 
-#MULTIPLICATIONS
+#Function MULTIPLICATIONS
 def mul():
-    print("Tu vas t'entraîner aux multiplications ! Ton but est d'atteindre le score de 10 !")
+    print("You're going to train yourself to multiplication ! "
+          " You have to reach a score of 10 to win ! ")
     score = 0
     while score < 10:
         a = random.randint(1, 10)
@@ -11,19 +22,20 @@ def mul():
         print(a, "x", b, " = ?")
         rep = input()
         if int(rep) == c:
-            print("OK, tu as juste.")
+            print("OK, that's right ! Keep going !")
             score = score + 1
-            print(f"Ton score est de {score}")
+            print(f"Your score is  {score}")
         else:
-            print("PAS OK")
+            print("NOT OK")
             score = score - 1
-            print(f"Ton score est de {score}")
+            print(f"Your score is {score}")
 
-    print("Bravo, tu as atteint 10 points !")
+    print("Yeah ! You win !")
 
-#ADDITIONS
+
+#Function ADDITIONS
 def add():
-    print("Tu vas t'entraîner aux additions ! Ton but est d'atteindre le score de 10 !")
+    print("You're going to train yourself to additions ! You have to reach a score of 10 to win  !")
     score = 0
     while score < 10:
         a = random.randint(1, 10)
@@ -33,21 +45,25 @@ def add():
         rep = input()
 
         if int(rep) == c:
-            print("OK? Tu as juste !")
+            print("OK, that's right !")
             score = score + 1
-            print(f"ton score est de {score}")
+            print(f"Your score is {score}")
         else:
-            print("PAS OK, c'est faux")
+            print("NOT OK !")
             score = score + 1
-            print(f"ton score est de {score}")
+            print(f"Your score is {score}")
 
-    print("Bravo !! Tu as atteint 10 points !")
+    print("Yeah ! You win !")
 
-#SOUSTRACTIONS
+
+
+#Function SUBTRACTIONS
 def sous():
-    score = 0
-    print("Tu vas t'entraîner aux soustractions ! Ton but est d'atteindre le score de 10 !")
 
+    print("You're going to train yourself to subtraction ! "
+          " You have to reach a score of ten to win the game !")
+
+    score = 0
     while score < 10:
         a = random.randint(1, 10)
         b = random.randint(1, 10)
@@ -56,28 +72,40 @@ def sous():
         rep = input()
 
         if int(rep) == c:
-            print("OK, tu as juste !")
+            print("OK,You're right !")
             score = score + 1
-            print(f"ton score est de {score}")
+            print(f"Your score is  {score}")
         else:
-            print("PAS OK")
+            print("NOT OK")
             score = score + 1
-            print(f"ton score est de {score}")
+            print(f"Your score is {score}")
 
-    print("Bravo !! Tu as atteint 10 points")
+    print("Yeah ! You win !!")
 
+#Main Menu
 
+replay = ""
 
-#MENU PRINCIPAL
-level = input("Dans ce jeu, tu peux t'entrainer aux multiplications,\n"
-                "aux additions ou aux soustractions. Choisis en entrant une des trois lettre:\n"
-              "Multiplivations (M), additions (A), soustractions (S) : ")
+#Loop of the game
+while replay != 'NO':
 
-if level == "M":
-    mul()
-elif level == "A":
-    add()
-elif level == "S":
-    sous()
-else:
+    level = input("In this game you can train yourself to multiplications,\n"
+                    "additions and subtractions. You can begin by what you want:\n"
+                  "Multiplications (M), Additions (A), Subtractions (S) : ")
+
+#levels of the game
+    if level == "M":
+        mul()
+        replay = input("Do you want to play again ? YES / NO ?")
+    elif level == "A":
+        add()
+        replay = input("Do you want to play again ? YES / NO ?")
+    elif level == "S":
+        sous()
+        replay = input("Do you want to play again ? YES / NO ?")
+    else:
+        print("ERROR")
+
+#If the player quits the game
+print("It was great playing with you ! See you around !")
     print("ERROR")
